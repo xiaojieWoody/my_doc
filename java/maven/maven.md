@@ -35,6 +35,8 @@
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-assembly-plugin</artifactId>
     <configuration>
+      <!--只保留一个带依赖的jar包-->
+      <appendAssemblyId>false</appendAssemblyId>
       <archive>
         <manifest>
           <!--main方法-->
@@ -92,3 +94,26 @@
   </executions>
 </plugin>
 ```
+
+# 添加本地依赖到SpringBoot项目
+
+```xml
+<dependency>
+  <groupId>com.tencent.autocloud</groupId>
+  <artifactId>compliance_client_lib</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <scope>system</scope>
+  <systemPath>${basedir}/src/main/libs/compliance_client_lib-1.0-SNAPSHOT.jar</systemPath>
+</dependency>
+
+<plugin>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-maven-plugin</artifactId>
+  <version>2.2.6.RELEASE</version>
+  <configuration>
+    <!--把项目打成jar，同时把本地jar包也引入进去-->
+    <includeSystemScope>true</includeSystemScope>
+  </configuration>
+</plugin>
+```
+
