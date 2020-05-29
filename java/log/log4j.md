@@ -260,5 +260,17 @@ Configuration:
 #          - ref: ROLLING_FILE
 ```
 
+# 问题
+
+```shell
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/Users/dingyuanjie/dev_env/maven/apache-maven-3.6.3/repo/com/tencent/autocloud/compliance_client_lib/1.0-RELEASE/compliance_client_lib-1.0-RELEASE.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/Users/dingyuanjie/dev_env/maven/apache-maven-3.6.3/repo/org/apache/logging/log4j/log4j-slf4j-impl/2.11.2/log4j-slf4j-impl-2.11.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+```
+
+
+
 
 
